@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yemen Phone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007bff">
+</head>
+<body>
+  <header>
+    <h1>📱 Yemen Phone</h1>
+  </header>
+  <main>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="ابحث بالاسم أو الرقم...">
+      <select id="networkFilter">
+        <option value="">كل الشبكات</option>
+        <option value="yemenmobile">يمن موبايل</option>
+        <option value="sabafon">سبأفون</option>
+        <option value="y">Y</option>
+        <option value="u">U</option>
+      </select>
+      <button onclick="addContact()">➕ إضافة</button>
+    </div>
+    <div id="contactsList" class="cards"></div>
+  </main>
+  <footer>
+    <p>© 2025 Yemen Phone</p>
+  </footer>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker Registered:', reg))
+        .catch(err => console.error('Service Worker Error:', err));
+    }
+  </script>
+</body>
+</html>
